@@ -1,0 +1,36 @@
+{
+  "name": "rsschool-codejam",
+  "version": "1.0.0",
+  "description": "codejam RS",
+  "main": "index.js",
+  "scripts": {
+    "eslint": "node_modules/.bin/eslint src/*.js test.js",
+	"test": "mocha",
+	"prebuild": "npm run eslint & npm run test",
+    "build": "babel src -d build",
+    "clean": "rm -rf build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/happy-Mary/rsschool-codejam.git"
+  },
+  "author": "Shklovskaya Maria",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/happy-Mary/rsschool-codejam/issues"
+  },
+  "homepage": "https://github.com/happy-Mary/rsschool-codejam#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "chai": "^4.2.0",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "mocha": "^5.2.0"
+  }
+}
