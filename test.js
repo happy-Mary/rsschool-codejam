@@ -1,6 +1,7 @@
 /* eslint-env node, mocha */
 const assert = require('assert');
 const sumOfOrder = require('./src/sum-of-order');
+const make = require('./src/make');
 
 describe('sumOfOrder', function() {
 	const firstArr = [2, 3, 4, 1];
@@ -17,5 +18,14 @@ describe('sumOfOrder', function() {
 	it('Should be same length as input array', function() {
 		assert.equal(sumOfOrder(firstArr).length, firstArr.length);
 		assert.equal(sumOfOrder(secondArr).length, secondArr.length);
+	});
+});
+
+describe('Make Function', function() {
+	it('Adding all input numbers', function() {
+		function sum(a, b) {
+			return a + b;
+		}
+		assert.equal(make(15)(34, 21, 666)(41)(sum), 777);
 	});
 });
