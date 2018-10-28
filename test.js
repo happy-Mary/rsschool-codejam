@@ -2,6 +2,7 @@
 const assert = require('assert');
 const sumOfOrder = require('./src/sum-of-order');
 const make = require('./src/make');
+const recursion = require('./src/recursion');
 
 describe('sumOfOrder', function() {
 	const firstArr = [2, 3, 4, 1];
@@ -27,5 +28,12 @@ describe('Make Function', function() {
 			return a + b;
 		}
 		assert.equal(make(15)(34, 21, 666)(41)(sum), 777);
+	});
+});
+
+describe('Recursion Function', function() {
+	it('Array returned from binary tree', function() {
+		let tree = {'value':100,'left':{'value':90,'left':{'value':70},'right':{'value':99}},'right':{'value':120,'left':{'value':110},'right':{'value':130}}};
+		assert.deepEqual(recursion(tree), [[100], [90, 120], [70,99,110,130]]);
 	});
 });
