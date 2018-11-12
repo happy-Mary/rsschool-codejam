@@ -13,11 +13,12 @@ module.exports = function recursion(obj) {
 	}
 
 	function groupNodes(arr, i, l) {
+		const newArr = [...arr];
 		while(l <= treeArray.length) {
-			arr.push(treeArray.slice(i, l));
-			return groupNodes(arr, l, l*2+1);
+			newArr.push(treeArray.slice(i, l));
+			return groupNodes(newArr, l, l*2+1);
 		}
-		return arr;
+		return newArr;
 	}
 
 	
