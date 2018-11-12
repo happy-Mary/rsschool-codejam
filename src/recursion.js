@@ -4,9 +4,9 @@ module.exports = function recursion(obj) {
 		arr.push(left.value);
 		arr.push(right.value);
 		
-		while(left.left && left.right) {
-			getNodes(arr, left.left, left.right);
-			getNodes(arr, right.left, right.right);
+		while(left.leftPart && left.rightPart) {
+			getNodes(arr, left.leftPart, left.rightPart);
+			getNodes(arr, right.leftPart, right.rightPart);
 			return arr;
 		}
 		return arr;
